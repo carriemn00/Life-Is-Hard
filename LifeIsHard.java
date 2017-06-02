@@ -9,28 +9,27 @@ package mood;
 import javax.swing.*;
 import java.awt.event.*;      
 import java.util.Random;
-public class LifeIsHard implements ActionListener {
-	final static String LABEL_TEXT = "Sometimes you literally just can't and that's ok.";
-	String[] labelText = {"Sometimes you literally just can't and that's ok.","You can't be flamed if you're already on fire.",
-			"I'm 200% done.","I don't know???","I h8 everything.","Everything is (not) fine."};
-	Random rand = new Random();
 
+public class LifeIsHard implements ActionListener {
+	String[] labelText = {"Sometimes you literally just can't and that's ok", "What?",
+			"Sorry, I'm 200% done.", "I h8 everything.", "Please don't bother me, I already bother myself.",
+			"I would like 5 minutes of peace and a pizza to go, thank you."};
+	Random rand = new Random();
 	JFrame frame;
 	JPanel contentPane;
 	JLabel label;
 	JButton button;
-	
-    public LifeIsHard(){
 
+    public LifeIsHard(){
         /* Create and set up the frame */
         frame = new JFrame("Life Is Hard");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         /* Create a content pane */
         contentPane = new JPanel();
-       
+
 		/* Create and add label */
-	    label = new JLabel(LABEL_TEXT);
+	    label = new JLabel("Hello.");
         contentPane.add(label);
 
 		/* Create and add button */
@@ -46,6 +45,7 @@ public class LifeIsHard implements ActionListener {
         frame.pack();
         frame.setVisible(true);
     }
+    
     
     /**
      * Handle button click action event
@@ -68,12 +68,14 @@ public class LifeIsHard implements ActionListener {
         }
     }
 
+
     /**
      * Create and show the GUI.
      */
     private static void runGUI() {
         JFrame.setDefaultLookAndFeelDecorated(true);
 
+        LifeIsHard greeting = new LifeIsHard();
     }
      
 
